@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=10 format=3 uid="uid://cn1syn1671361"]
 
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cjpqguam1rh2i" path="res://Interactables/Table/Table.tscn" id="2_0xm2m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/Cone/cone.tres" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dtjflmog6ee8h" path="res://Interactables/Trash/Trash.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cpyehnysyejpv" path="res://Interactables/Spawner/Spawner.tscn" id="7_272bh"]
+[ext_resource type="Resource" uid="uid://s8nlqrc0s2mq" path="res://Items/Ingredient/Ingredients/Ice/ice_strawberry.tres" id="8_5vw27"]
 
 [sub_resource type="Resource" id="Resource_1bvp3"]
 script = ExtResource("3_h2yge")
@@ -16,7 +17,6 @@ metadata/_custom_type_script = "uid://bipvtd5t5b2mo"
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(-58, -13)
 
 [node name="Table2" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(0, -34)
@@ -30,6 +30,10 @@ item = SubResource("Resource_1bvp3")
 
 [node name="Trash" parent="." instance=ExtResource("6_7mycd")]
 position = Vector2(32, -34)
+
+[node name="Spawner2" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(-48, -34)
+ingredient = ExtResource("8_5vw27")
 
 [node name="Spawner" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(-32, -34)
