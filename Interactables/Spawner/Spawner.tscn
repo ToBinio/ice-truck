@@ -1,8 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpyehnysyejpv"]
+[gd_scene load_steps=5 format=3 uid="uid://cpyehnysyejpv"]
 
 [ext_resource type="PackedScene" uid="uid://ck4hakxpc68dk" path="res://Interactables/Interactable.tscn" id="1_7guo8"]
 [ext_resource type="Script" uid="uid://dk7x2y0fbumee" path="res://Interactables/Spawner/spawner.gd" id="2_d22e4"]
+[ext_resource type="Texture2D" uid="uid://r54l8puixg7m" path="res://Interactables/Spawner/spawner.png" id="3_7aaii"]
+[ext_resource type="Texture2D" uid="uid://be1o7dkscsijk" path="res://Items/Ingredient/Ingredients/Cone/cone.png" id="3_emw8u"]
 
 [node name="Interactable" instance=ExtResource("1_7guo8")]
 script = ExtResource("2_d22e4")
-item = null
+ingredient = null
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_7aaii")
+
+[node name="Ingredient" type="Sprite2D" parent="." index="2"]
+unique_name_in_owner = true
+position = Vector2(0, -1)
+texture = ExtResource("3_emw8u")

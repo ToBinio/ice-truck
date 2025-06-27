@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=9 format=3 uid="uid://cn1syn1671361"]
 
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cjpqguam1rh2i" path="res://Interactables/Table/Table.tscn" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://btad234b4ron5" path="res://Items/Ingredient/ingredient.gd" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://bipvtd5t5b2mo" path="res://Items/item_resource.gd" id="3_h2yge"]
-[ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/cone.tres" id="4_lquwl"]
+[ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/Cone/cone.tres" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dtjflmog6ee8h" path="res://Interactables/Trash/Trash.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cpyehnysyejpv" path="res://Interactables/Spawner/Spawner.tscn" id="7_272bh"]
 
@@ -13,29 +13,27 @@ script = ExtResource("3_h2yge")
 ingredients = Array[ExtResource("3_1bvp3")]([ExtResource("4_lquwl")])
 metadata/_custom_type_script = "uid://bipvtd5t5b2mo"
 
-[sub_resource type="Resource" id="Resource_272bh"]
-script = ExtResource("3_h2yge")
-ingredients = Array[ExtResource("3_1bvp3")]([])
-metadata/_custom_type_script = "uid://bipvtd5t5b2mo"
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(131, 118)
+position = Vector2(-58, -13)
 
 [node name="Table2" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(315, 93)
+position = Vector2(0, -34)
 
 [node name="Table3" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(380, 91)
+position = Vector2(16, -34)
 
 [node name="Table" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(250, 93)
+position = Vector2(-16, -34)
 item = SubResource("Resource_1bvp3")
 
 [node name="Trash" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(529, 90)
+position = Vector2(32, -34)
 
 [node name="Spawner" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(77, 89)
-item = SubResource("Resource_272bh")
+position = Vector2(-32, -34)
+ingredient = ExtResource("4_lquwl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)

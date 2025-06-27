@@ -9,7 +9,9 @@ class_name ItemHoldable
 			_item_node.free()
 		
 		if item:
-			var scene = item.SCENE.instantiate() as Node
+			var scene = item.SCENE.instantiate() as Item
+			scene.resource = item
+			
 			_item_node = scene
 			add_child(scene)
 			

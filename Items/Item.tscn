@@ -10,4 +10,5 @@ z_index = 1
 script = ExtResource("1_pwpfw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = SubResource("PlaceholderTexture2D_38ins")

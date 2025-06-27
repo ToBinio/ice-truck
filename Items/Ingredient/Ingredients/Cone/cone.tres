@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://b4eeu8gem8aqi"]
+
+[ext_resource type="Script" uid="uid://btad234b4ron5" path="res://Items/Ingredient/ingredient.gd" id="1_q7cu6"]
+[ext_resource type="Texture2D" uid="uid://be1o7dkscsijk" path="res://Items/Ingredient/Ingredients/Cone/cone.png" id="2_yc4w3"]
+
+[resource]
+script = ExtResource("1_q7cu6")
+name = "Cone"
+texture = ExtResource("2_yc4w3")
+metadata/_custom_type_script = "uid://btad234b4ron5"
