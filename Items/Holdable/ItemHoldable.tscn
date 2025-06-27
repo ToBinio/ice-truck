@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgem4m2tr8uk0"]
+
+[ext_resource type="Script" uid="uid://6laj5g83dxpy" path="res://Items/Holdable/item_holdable.gd" id="1_r13qa"]
+
+[node name="ItemHoldable" type="Node2D"]
+script = ExtResource("1_r13qa")

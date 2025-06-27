@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpyehnysyejpv"]
+
+[ext_resource type="PackedScene" uid="uid://ck4hakxpc68dk" path="res://Interactables/Interactable.tscn" id="1_7guo8"]
+[ext_resource type="Script" uid="uid://dk7x2y0fbumee" path="res://Interactables/Spawner/spawner.gd" id="2_d22e4"]
+
+[node name="Interactable" instance=ExtResource("1_7guo8")]
+script = ExtResource("2_d22e4")
+item = null
