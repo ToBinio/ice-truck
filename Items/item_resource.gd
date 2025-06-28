@@ -50,6 +50,12 @@ func is_same(other: ItemResource) -> bool:
 		return false
 	if base != other.base:
 		return false
-	if ice != other.ice:
+	
+	if ice.size() != other.ice.size():
 		return false
+		
+	for value in ice:
+		if not other.ice.has(value):
+			return false
+			
 	return true
