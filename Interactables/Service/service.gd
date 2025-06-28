@@ -1,4 +1,5 @@
 extends Interactable
+class_name Service
 
 @export var possible_ice: Array[IceIngredient]
 @export var possible_base: Array[BaseIngredient]
@@ -26,8 +27,10 @@ func interact(player: Player):
 	if(task.is_same(player.item)):
 		task = null
 		_display_task()
+		GameManager.instance(self).happiness += 20
 		print("Served correcly")
 	else:
+		GameManager.instance(self).happiness -= 25
 		print("nope")
 		
 	player.item = null

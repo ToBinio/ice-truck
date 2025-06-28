@@ -12,8 +12,31 @@
 [ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="10_efxa6"]
 [ext_resource type="PackedScene" uid="uid://kc1yw2x7uvuk" path="res://Interactables/Service/Service.tscn" id="11_efxa6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 26.63
+grow_horizontal = 0
+
+[node name="HappinessBar" type="ProgressBar" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.185
+offset_bottom = 0.184999
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GameManager" type="Node" parent="." groups=["GameManager"]]
 script = ExtResource("1_4c57u")
@@ -22,73 +45,76 @@ script = ExtResource("1_4c57u")
 wait_time = 5.0
 autostart = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(2, -13)
 
-[node name="Table2" parent="." instance=ExtResource("2_0xm2m")]
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Table2" parent="World" instance=ExtResource("2_0xm2m")]
 y_sort_enabled = false
 position = Vector2(4, -26)
 
-[node name="Table3" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Table3" parent="World" instance=ExtResource("2_0xm2m")]
 y_sort_enabled = false
 position = Vector2(20, -26)
 
-[node name="Table" parent="." instance=ExtResource("2_0xm2m")]
+[node name="Table" parent="World" instance=ExtResource("2_0xm2m")]
 y_sort_enabled = false
 position = Vector2(-12, -26)
 
-[node name="Trash" parent="." instance=ExtResource("6_7mycd")]
+[node name="Trash" parent="World" instance=ExtResource("6_7mycd")]
 y_sort_enabled = false
 position = Vector2(8, 33)
 is_broken = false
 
-[node name="Trash2" parent="." instance=ExtResource("6_7mycd")]
+[node name="Trash2" parent="World" instance=ExtResource("6_7mycd")]
 y_sort_enabled = false
 position = Vector2(14, -70)
 is_broken = false
 can_break = false
 
-[node name="Spawner2" parent="." instance=ExtResource("7_272bh")]
+[node name="Spawner2" parent="World" instance=ExtResource("7_272bh")]
 y_sort_enabled = false
 position = Vector2(-24, 33)
 ingredient = ExtResource("8_5vw27")
 is_broken = false
 
-[node name="Spawner3" parent="." instance=ExtResource("7_272bh")]
+[node name="Spawner3" parent="World" instance=ExtResource("7_272bh")]
 y_sort_enabled = false
 position = Vector2(-40, 33)
 ingredient = ExtResource("9_4c57u")
 is_broken = false
 
-[node name="Spawner4" parent="." instance=ExtResource("7_272bh")]
+[node name="Spawner4" parent="World" instance=ExtResource("7_272bh")]
 y_sort_enabled = false
 position = Vector2(-56, 33)
 ingredient = ExtResource("10_efxa6")
 is_broken = false
 
-[node name="Spawner" parent="." instance=ExtResource("7_272bh")]
+[node name="Spawner" parent="World" instance=ExtResource("7_272bh")]
 y_sort_enabled = false
 position = Vector2(-8, 33)
 ingredient = ExtResource("4_lquwl")
 is_broken = false
 
-[node name="Spawner5" parent="." instance=ExtResource("7_272bh")]
+[node name="Spawner5" parent="World" instance=ExtResource("7_272bh")]
 y_sort_enabled = false
 position = Vector2(-2, -70)
 ingredient = ExtResource("8_efxa6")
 is_broken = false
 can_break = false
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
-[node name="Interactable" parent="." instance=ExtResource("11_efxa6")]
+[node name="Interactable" parent="World" instance=ExtResource("11_efxa6")]
 position = Vector2(24, 33)
 
-[node name="Interactable2" parent="." instance=ExtResource("11_efxa6")]
+[node name="Interactable2" parent="World" instance=ExtResource("11_efxa6")]
 position = Vector2(40, 33)
 
-[node name="Interactable3" parent="." instance=ExtResource("11_efxa6")]
+[node name="Interactable3" parent="World" instance=ExtResource("11_efxa6")]
 position = Vector2(56, 33)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]

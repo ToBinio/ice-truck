@@ -26,7 +26,7 @@ region = Rect2(18, 0, 18, 0)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ur4n8"]
 size = Vector2(10, 10)
 
-[node name="Interactable" instance=ExtResource("1_njncs")]
+[node name="Interactable" groups=["Service"] instance=ExtResource("1_njncs")]
 script = ExtResource("2_1o6vg")
 possible_ice = Array[ExtResource("3_uxhjx")]([ExtResource("4_myjxr"), ExtResource("5_2hnnq"), ExtResource("6_n83t4")])
 possible_base = Array[ExtResource("7_4rbit")]([ExtResource("8_2hnnq")])
