@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=17 format=3 uid="uid://cn1syn1671361"]
 
 [ext_resource type="Script" uid="uid://dax1lftn7otqb" path="res://game_manager.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
@@ -12,12 +12,175 @@
 [ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="10_efxa6"]
 [ext_resource type="PackedScene" uid="uid://kc1yw2x7uvuk" path="res://Interactables/Service/Service.tscn" id="11_efxa6"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
+bg_color = Color(0.222413, 0.672204, 0.703748, 1)
+
+[sub_resource type="Animation" id="Animation_efxa6"]
+resource_name = "Death"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Timer:theme_override_font_sizes/font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [18, 86]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Timer:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-71, 31), Vector2(-569, 290.83)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ui/Label:theme_override_font_sizes/font_size")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.533333, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 50]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ui/Label:theme_override_colors/font_color")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.59, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ui/Button:modulate")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.23333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ui/Button:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Timer:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Timer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-73, 27)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ui/Label:theme_override_font_sizes/font_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [50]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ui/Label:theme_override_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ui/Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ui/Button:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dg77c"]
+_data = {
+&"Death": SubResource("Animation_efxa6"),
+&"RESET": SubResource("Animation_dg77c")
+}
+
+[sub_resource type="Gradient" id="Gradient_efxa6"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
+
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Ui" type="Control" parent="CanvasLayer"]
 custom_minimum_size = Vector2(100, 25)
 layout_mode = 3
 anchors_preset = 1
@@ -27,7 +190,7 @@ offset_left = -100.0
 offset_bottom = 26.63
 grow_horizontal = 0
 
-[node name="HappinessBar" type="ProgressBar" parent="CanvasLayer/Control"]
+[node name="HappinessBar" type="ProgressBar" parent="CanvasLayer/Ui"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -37,9 +200,70 @@ offset_top = -0.185
 offset_bottom = 0.184999
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_efxa6")
+value = 50.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -816.5
+offset_top = 145.685
+offset_right = -250.5
+offset_bottom = 288.685
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 50
+text = "Shop Closed!
+People are not happy..."
+horizontal_alignment = 1
+
+[node name="Timer" type="Label" parent="CanvasLayer/Ui"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 27.0
+offset_right = 48.0
+offset_bottom = 145.0
+grow_horizontal = 2
+pivot_offset = Vector2(44, -25)
+theme_override_font_sizes/font_size = 14
+text = "5:10"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Ui"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -593.0
+offset_top = 390.685
+offset_right = -512.0
+offset_bottom = 421.685
+grow_horizontal = 2
+grow_vertical = 2
+text = "Try Again"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_dg77c")
+}
 
 [node name="GameManager" type="Node" parent="." groups=["GameManager"]]
 script = ExtResource("1_4c57u")
+happniness_gradient = SubResource("Gradient_efxa6")
 
 [node name="Timer" type="Timer" parent="GameManager"]
 wait_time = 5.0
@@ -117,4 +341,5 @@ position = Vector2(40, 33)
 [node name="Interactable3" parent="World" instance=ExtResource("11_efxa6")]
 position = Vector2(56, 33)
 
+[connection signal="pressed" from="CanvasLayer/Ui/Button" to="GameManager" method="_on_button_pressed"]
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]

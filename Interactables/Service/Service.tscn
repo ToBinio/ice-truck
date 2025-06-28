@@ -36,6 +36,7 @@ highlight_texture = SubResource("AtlasTexture_1ltcq")
 
 [node name="Timer" type="Timer" parent="." index="0"]
 unique_name_in_owner = true
+wait_time = 5.0
 autostart = true
 
 [node name="Sprite2D" parent="." index="2"]

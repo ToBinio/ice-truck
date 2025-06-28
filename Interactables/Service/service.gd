@@ -13,7 +13,7 @@ var task: ItemResource
 func _process(delta: float) -> void:
 	super(delta)
 	
-	if _show_task:
+	if _show_task and task:
 		task_node.show()
 	else:
 		task_node.hide()
@@ -43,7 +43,7 @@ func can_interact(player: Player):
 	if super(player) != null:
 		return super(player)
 	
-	return player.item and player.item.basic == null;
+	return player.item and player.item.basic == null and task;
 
 var i = 0;
 func _display_task():
@@ -60,6 +60,8 @@ func _display_task():
 	var add_icon = func(ingredient:Ingredient):
 		var sprite = Sprite2D.new()
 		sprite.texture = ingredient.icon_texture
+		
+		@warning_ignore("integer_division")
 		sprite.position.y = i / 2 * 10
 		sprite.position.x = -5 if i % 2 == 0 else 5 
 		
@@ -78,7 +80,7 @@ func _on_timer_timeout() -> void:
 		
 		item.base = possible_base.pick_random()
 		
-		for i in randi_range(1,3):
+		for _i in randi_range(1,3):
 			item.ice.append(possible_ice.pick_random())
 		
 		task = item

@@ -38,6 +38,9 @@ func _process(_delta: float) -> void:
 		collider.try_interact(self)
 
 func _input(event: InputEvent) -> void:
+	if GameManager.instance(self).has_lost:
+		return
+		
 	if event.is_action_pressed("interact"):
 		var collider = ray_cast.get_collider()
 		
@@ -47,7 +50,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	var input := Input.get_vector("left", "right", "up", "down")
-	if input:
+	if input and not GameManager.instance(self).has_lost:
 		_facing_direction = input
 		_target_direction = input * speed
 	else:
