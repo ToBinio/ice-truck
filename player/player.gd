@@ -5,13 +5,11 @@ class_name Player
 @export var speed = 300.0
 @export var acceleration = 20
 
-@onready var rotated: Node2D = %Rotated
 @onready var ray_cast: RayCast2D = %RayCast2D
-
 @onready var item_holdable: ItemHoldable = %ItemHoldable
 
 var _target_direction: Vector2;
-var _facing_direction: Vector2;
+var _facing_direction: Vector2 = Vector2.RIGHT;
 
 @export var item: ItemResource:
 	set(value):
@@ -23,8 +21,12 @@ var _facing_direction: Vector2;
 func _ready() -> void:
 	item_holdable.item = item
 
-func _process(delta: float) -> void:
-	rotated.rotation = _facing_direction.angle()
+func _process(_delta: float) -> void:
+	var ray_length = ray_cast.target_position.length()
+	ray_cast.target_position = _facing_direction * ray_length
+	
+	var item_distance = item_holdable.position.length()
+	item_holdable.position = _facing_direction * item_distance
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):

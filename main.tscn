@@ -1,17 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=12 format=3 uid="uid://cn1syn1671361"]
 
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cjpqguam1rh2i" path="res://Interactables/Table/Table.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://btad234b4ron5" path="res://Items/Ingredient/ingredient.gd" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://b1gl3od3uby36" path="res://Items/Ingredient/ice_ingredient.gd" id="3_4c57u"]
 [ext_resource type="Script" uid="uid://bipvtd5t5b2mo" path="res://Items/item_resource.gd" id="3_h2yge"]
-[ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/Cone/cone.tres" id="4_lquwl"]
+[ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/cone.tres" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dtjflmog6ee8h" path="res://Interactables/Trash/Trash.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cpyehnysyejpv" path="res://Interactables/Spawner/Spawner.tscn" id="7_272bh"]
-[ext_resource type="Resource" uid="uid://s8nlqrc0s2mq" path="res://Items/Ingredient/Ingredients/Ice/ice_strawberry.tres" id="8_5vw27"]
+[ext_resource type="Resource" uid="uid://s8nlqrc0s2mq" path="res://Items/Ingredient/Ingredients/ice_strawberry.tres" id="8_5vw27"]
+[ext_resource type="Resource" uid="uid://cpnl4lkcotet3" path="res://Items/Ingredient/Ingredients/ice_chocolate.tres" id="9_4c57u"]
+[ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="10_efxa6"]
 
 [sub_resource type="Resource" id="Resource_1bvp3"]
 script = ExtResource("3_h2yge")
-ingredients = Array[ExtResource("3_1bvp3")]([ExtResource("4_lquwl")])
+ice = Array[ExtResource("3_4c57u")]([])
 metadata/_custom_type_script = "uid://bipvtd5t5b2mo"
 
 [node name="Node2D" type="Node2D"]
@@ -34,6 +36,14 @@ position = Vector2(32, -34)
 [node name="Spawner2" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(-48, -34)
 ingredient = ExtResource("8_5vw27")
+
+[node name="Spawner3" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(-64, -34)
+ingredient = ExtResource("9_4c57u")
+
+[node name="Spawner4" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(-80, -34)
+ingredient = ExtResource("10_efxa6")
 
 [node name="Spawner" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(-32, -34)

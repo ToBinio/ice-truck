@@ -1,32 +1,39 @@
 extends Resource
 class_name ItemResource
 
-@export var ingredients: Array[Ingredient] = []
+@export var base: BaseIngredient
+@export var ice: Array[IceIngredient]
 
 const SCENE = preload("res://Items/Item.tscn")
+
+static func from_ingredient(ingredient:Ingredient) -> ItemResource:
+	var item = ItemResource.new()
+	
+	if ingredient is IceIngredient:
+		item.ice.append(ingredient)
+	if ingredient is BaseIngredient:
+		item.base = ingredient
+	
+	return item
 
 static func combine(a: ItemResource, b: ItemResource) -> ItemResource:
 	var item = ItemResource.new()
 	
-	item.ingredients.append_array(a.ingredients)
-	item.ingredients.append_array(b.ingredients)
+	if(a.base):
+		item.base = a.base
+	if(b.base):
+		item.base = b.base
+	
+	item.ice.append_array(a.ice)
+	item.ice.append_array(b.ice)
 	
 	return item
 
-func valid() -> bool:
-	if (_count_ingredient(Ingredient.TYPE.BASE) > 1):
+static func can_combine(a: ItemResource, b: ItemResource) -> bool:
+	if a.base and b.base:
 		return false
 	
-	if (_count_ingredient(Ingredient.TYPE.ICE) > 3):
+	if a.ice.size() + b.ice.size() > 3:
 		return false
 	
 	return true
-	
-func _count_ingredient(type: Ingredient.TYPE) -> int:
-	var count = 0
-	
-	for ingredient in ingredients:
-		if(ingredient.type == type):
-			count += 1 
-	
-	return count

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvaud0ka5jorv"
-path="res://.godot/imported/strawberry.png-820a8267a383ce4be948a304bf7e1883.ctex"
+uid="uid://o53mm2gqr6qk"
+path="res://.godot/imported/ingredients_model.png-e7b4b780e5a60b190e488eab2dc7cfc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Ingredient/Ingredients/Ice/strawberry.png"
-dest_files=["res://.godot/imported/strawberry.png-820a8267a383ce4be948a304bf7e1883.ctex"]
+source_file="res://Items/Ingredient/Ingredients/ingredients_model.png"
+dest_files=["res://.godot/imported/ingredients_model.png-e7b4b780e5a60b190e488eab2dc7cfc1.ctex"]
 
 [params]
 

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://b4eeu8gem8aqi"]
+
+[ext_resource type="Script" uid="uid://fkdliok7ftoe" path="res://Items/Ingredient/base_ingredient.gd" id="1_q7cu6"]
+[ext_resource type="Texture2D" uid="uid://6gkpjgw28kd2" path="res://Items/Ingredient/Ingredients/ingredients.png" id="2_430tg"]
+[ext_resource type="Texture2D" uid="uid://o53mm2gqr6qk" path="res://Items/Ingredient/Ingredients/ingredients_model.png" id="2_xf8o1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_430tg"]
+atlas = ExtResource("2_430tg")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iae8s"]
+atlas = ExtResource("2_xf8o1")
+region = Rect2(0, 0, 10, 10)
+
+[resource]
+script = ExtResource("1_q7cu6")
+model_texture = SubResource("AtlasTexture_iae8s")
+name = "Cone"
+icon_texture = SubResource("AtlasTexture_430tg")
+metadata/_custom_type_script = "uid://btad234b4ron5"

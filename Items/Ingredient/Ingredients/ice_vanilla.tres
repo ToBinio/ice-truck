@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://cpsmhquju0ld2"]
+
+[ext_resource type="Script" uid="uid://b1gl3od3uby36" path="res://Items/Ingredient/ice_ingredient.gd" id="1_prts8"]
+[ext_resource type="Texture2D" uid="uid://6gkpjgw28kd2" path="res://Items/Ingredient/Ingredients/ingredients.png" id="2_3fosd"]
+[ext_resource type="Texture2D" uid="uid://o53mm2gqr6qk" path="res://Items/Ingredient/Ingredients/ingredients_model.png" id="2_60m6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prts8"]
+atlas = ExtResource("2_3fosd")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjof5"]
+atlas = ExtResource("2_60m6q")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fosd"]
+atlas = ExtResource("2_60m6q")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60m6q"]
+atlas = ExtResource("2_60m6q")
+region = Rect2(60, 0, 10, 10)
+
+[resource]
+script = ExtResource("1_prts8")
+level1_texture = SubResource("AtlasTexture_fjof5")
+level2_texture = SubResource("AtlasTexture_3fosd")
+level3_texture = SubResource("AtlasTexture_60m6q")
+name = "Vanilla Ice"
+icon_texture = SubResource("AtlasTexture_prts8")
+metadata/_custom_type_script = "uid://btad234b4ron5"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be1o7dkscsijk"
-path="res://.godot/imported/cone.png-d5f707320c095f8ec80d0a19dc3fa5fe.ctex"
+uid="uid://6gkpjgw28kd2"
+path="res://.godot/imported/ingredients.png-1e5b95f8c3dc620017af3d5bd8c1969f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Ingredient/Ingredients/Cone/cone.png"
-dest_files=["res://.godot/imported/cone.png-d5f707320c095f8ec80d0a19dc3fa5fe.ctex"]
+source_file="res://Items/Ingredient/Ingredients/ingredients.png"
+dest_files=["res://.godot/imported/ingredients.png-1e5b95f8c3dc620017af3d5bd8c1969f.ctex"]
 
 [params]
 

@@ -4,13 +4,11 @@ extends Interactable
 @onready var ingredient_sprite: Sprite2D = %Ingredient
 
 func _ready() -> void:
-	ingredient_sprite.texture = ingredient.texture
+	ingredient_sprite.texture = ingredient.icon_texture
 
 func interact(player: Player):
 	if player.item:
 		return
 		
-	var item = ItemResource.new()
-	item.ingredients.push_back(ingredient)
-	
+	var item = ItemResource.from_ingredient(ingredient)
 	player.item = item

@@ -20,8 +20,9 @@ func interact(player: Player):
 		player.item = item
 		item = null
 	else: if item and player.item:
-		var combination = ItemResource.combine(item, player.item)
+		if not ItemResource.can_combine(item, player.item):
+			return
 		
-		if (combination.valid()):
-			item = combination
-			player.item = null
+		var combination = ItemResource.combine(item, player.item)
+		item = combination
+		player.item = null

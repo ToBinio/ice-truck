@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://s8nlqrc0s2mq"]
+
+[ext_resource type="Script" uid="uid://b1gl3od3uby36" path="res://Items/Ingredient/ice_ingredient.gd" id="1_fbhnx"]
+[ext_resource type="Texture2D" uid="uid://o53mm2gqr6qk" path="res://Items/Ingredient/Ingredients/ingredients_model.png" id="2_3rvy8"]
+[ext_resource type="Texture2D" uid="uid://6gkpjgw28kd2" path="res://Items/Ingredient/Ingredients/ingredients.png" id="2_5efdh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5efdh"]
+atlas = ExtResource("2_5efdh")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mrn6"]
+atlas = ExtResource("2_3rvy8")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rvy8"]
+atlas = ExtResource("2_3rvy8")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmffj"]
+atlas = ExtResource("2_3rvy8")
+region = Rect2(30, 0, 10, 10)
+
+[resource]
+script = ExtResource("1_fbhnx")
+level1_texture = SubResource("AtlasTexture_4mrn6")
+level2_texture = SubResource("AtlasTexture_3rvy8")
+level3_texture = SubResource("AtlasTexture_xmffj")
+name = "Strawberry Ice"
+icon_texture = SubResource("AtlasTexture_5efdh")
+metadata/_custom_type_script = "uid://btad234b4ron5"

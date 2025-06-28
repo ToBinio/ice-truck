@@ -20,13 +20,10 @@ texture = SubResource("PlaceholderTexture2D_sh265")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sh265")
 
-[node name="Rotated" type="Node2D" parent="."]
-unique_name_in_owner = true
-
-[node name="ItemHoldable" parent="Rotated" instance=ExtResource("2_rkbax")]
+[node name="ItemHoldable" parent="." instance=ExtResource("2_rkbax")]
 unique_name_in_owner = true
 position = Vector2(13, 0)
 
-[node name="RayCast2D" type="RayCast2D" parent="Rotated"]
+[node name="RayCast2D" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 target_position = Vector2(25, 0)
