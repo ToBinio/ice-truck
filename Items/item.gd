@@ -6,7 +6,6 @@ class_name Item
 func _ready() -> void:
 	for index in range(resource.ice.size()): 
 		var ingredient = resource.ice[index]
-		
 		match index:
 			0: _display_ingredient(ingredient.level1_texture)
 			1: _display_ingredient(ingredient.level2_texture)

@@ -8,6 +8,8 @@ class_name Player
 @onready var ray_cast: RayCast2D = %RayCast2D
 @onready var item_holdable: ItemHoldable = %ItemHoldable
 
+@onready var animation_tree: AnimationTree = %AnimationTree
+
 var _target_direction: Vector2;
 var _facing_direction: Vector2 = Vector2.RIGHT;
 
@@ -22,6 +24,8 @@ func _ready() -> void:
 	item_holdable.item = item
 
 func _process(_delta: float) -> void:
+	animation_tree.set("parameters/blend_position", _target_direction)
+	
 	var ray_length = ray_cast.target_position.length()
 	ray_cast.target_position = _facing_direction * ray_length
 	
