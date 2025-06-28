@@ -1,0 +1,55 @@
+[gd_scene load_steps=15 format=3 uid="uid://kc1yw2x7uvuk"]
+
+[ext_resource type="PackedScene" uid="uid://ck4hakxpc68dk" path="res://Interactables/Interactable.tscn" id="1_njncs"]
+[ext_resource type="Script" uid="uid://bcnxfvv3xn3ky" path="res://Interactables/Service/service.gd" id="2_1o6vg"]
+[ext_resource type="Texture2D" uid="uid://cdhmsviqsaw6n" path="res://Interactables/Service/service.png" id="3_7d57v"]
+[ext_resource type="Script" uid="uid://b1gl3od3uby36" path="res://Items/Ingredient/ice_ingredient.gd" id="3_uxhjx"]
+[ext_resource type="Resource" uid="uid://cpnl4lkcotet3" path="res://Items/Ingredient/Ingredients/ice_chocolate.tres" id="4_myjxr"]
+[ext_resource type="Resource" uid="uid://s8nlqrc0s2mq" path="res://Items/Ingredient/Ingredients/ice_strawberry.tres" id="5_2hnnq"]
+[ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="6_n83t4"]
+[ext_resource type="Script" uid="uid://fkdliok7ftoe" path="res://Items/Ingredient/base_ingredient.gd" id="7_4rbit"]
+[ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/cone.tres" id="8_2hnnq"]
+[ext_resource type="PackedScene" uid="uid://bgem4m2tr8uk0" path="res://Items/Holdable/ItemHoldable.tscn" id="10_n83t4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d57v"]
+atlas = ExtResource("3_7d57v")
+region = Rect2(0, 0, 18, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxhjx"]
+atlas = ExtResource("3_7d57v")
+region = Rect2(36, 0, 18, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ltcq"]
+atlas = ExtResource("3_7d57v")
+region = Rect2(18, 0, 18, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ur4n8"]
+size = Vector2(10, 10)
+
+[node name="Interactable" instance=ExtResource("1_njncs")]
+script = ExtResource("2_1o6vg")
+possible_ice = Array[ExtResource("3_uxhjx")]([ExtResource("4_myjxr"), ExtResource("5_2hnnq"), ExtResource("6_n83t4")])
+possible_base = Array[ExtResource("7_4rbit")]([ExtResource("8_2hnnq")])
+texture = SubResource("AtlasTexture_7d57v")
+broken_texture = SubResource("AtlasTexture_uxhjx")
+highlight_texture = SubResource("AtlasTexture_1ltcq")
+
+[node name="Timer" type="Timer" parent="." index="0"]
+unique_name_in_owner = true
+autostart = true
+
+[node name="Sprite2D" parent="." index="2"]
+texture = SubResource("AtlasTexture_7d57v")
+
+[node name="ItemDisplay" parent="." index="4" instance=ExtResource("10_n83t4")]
+unique_name_in_owner = true
+position = Vector2(0, 9)
+
+[node name="Task" type="Node2D" parent="." index="5"]
+unique_name_in_owner = true
+position = Vector2(0, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="Task" index="0"]
+texture = SubResource("PlaceholderTexture2D_ur4n8")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

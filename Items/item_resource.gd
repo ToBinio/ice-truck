@@ -44,3 +44,12 @@ static func can_combine(a: ItemResource, b: ItemResource) -> bool:
 		return false
 	
 	return true
+
+func is_same(other: ItemResource) -> bool:
+	if basic != other.basic:
+		return false
+	if base != other.base:
+		return false
+	if ice != other.ice:
+		return false
+	return true

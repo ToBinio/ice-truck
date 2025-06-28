@@ -17,10 +17,9 @@ can_break = true
 
 [node name="Overlay" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.784314)
+modulate = Color(1, 1, 1, 0.392157)
 z_index = 1
 y_sort_enabled = true
-texture = SubResource("PlaceholderTexture2D_nuwr0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
