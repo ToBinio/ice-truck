@@ -10,6 +10,7 @@ class_name Interactable
 
 @onready var sprite_2d: Sprite2D = %Sprite2D
 @onready var overlay: Sprite2D = %Overlay
+@onready var broken: Sprite2D = %Broken
 
 var _can_interact = false
 @export var is_broken = false
@@ -26,6 +27,8 @@ func _process(_delta: float) -> void:
 	else:
 		overlay.texture = null
 		
+	broken.visible = is_broken
+	
 	_can_interact = false
 
 func interact(player: Player) -> bool:

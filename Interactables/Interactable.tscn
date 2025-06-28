@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck4hakxpc68dk"]
+[gd_scene load_steps=6 format=3 uid="uid://ck4hakxpc68dk"]
 
 [ext_resource type="Script" uid="uid://clpjnytcxurqt" path="res://Interactables/interactable.gd" id="1_nuwr0"]
 [ext_resource type="Resource" uid="uid://dwctef6ow7db3" path="res://Items/Ingredient/Ingredients/wrench.tres" id="2_78h5l"]
+[ext_resource type="Texture2D" uid="uid://du4l7wanitdxu" path="res://Items/Ingredient/Ingredients/wrench.png" id="3_o0cj4"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nuwr0"]
 size = Vector2(16, 16)
@@ -15,16 +16,21 @@ script = ExtResource("1_nuwr0")
 wrench_ingredient = ExtResource("2_78h5l")
 can_break = true
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+texture = SubResource("PlaceholderTexture2D_nuwr0")
+
+[node name="Broken" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.588235)
+texture = ExtResource("3_o0cj4")
+
 [node name="Overlay" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.392157)
 z_index = 1
 y_sort_enabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-y_sort_enabled = true
-texture = SubResource("PlaceholderTexture2D_nuwr0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_78h5l")

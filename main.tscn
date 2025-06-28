@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=22 format=4 uid="uid://cn1syn1671361"]
 
 [ext_resource type="Script" uid="uid://dax1lftn7otqb" path="res://game_manager.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://cpnl4lkcotet3" path="res://Items/Ingredient/Ingredients/ice_chocolate.tres" id="9_4c57u"]
 [ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="10_efxa6"]
 [ext_resource type="PackedScene" uid="uid://kc1yw2x7uvuk" path="res://Interactables/Service/Service.tscn" id="11_efxa6"]
+[ext_resource type="Texture2D" uid="uid://mglnsltghlgx" path="res://spritesheet.png" id="12_dg77c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
 bg_color = Color(0.222413, 0.672204, 0.703748, 1)
@@ -175,6 +176,38 @@ _data = {
 [sub_resource type="Gradient" id="Gradient_efxa6"]
 colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
+texture = ExtResource("12_dg77c")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w48qg"]
+sources/0 = SubResource("TileSetAtlasSource_ycdy4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(196, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycdy4"]
+size = Vector2(8.5, 100.5)
+
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 
@@ -270,76 +303,97 @@ wait_time = 5.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(5, 5)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(2, -13)
+position = Vector2(4, -35)
 
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Van" type="TileMapLayer" parent="World"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAGAP3/AAALAAAAAAAGAP7/AAALAAAAAAAGAP//AAALAAAAAAAGAAAAAAALAAAAAAD5//3/AAAKAAAAAAD5//7/AAAKAAAAAAD5////AAAKAAAAAAD5/wAAAAATAAAAAAD5//z/AAAGAAAAAAAFAPz/AAAEAAAAAAAGAPz/AAADAAAAAAD6//z/AAAHAAAAAAD7//z/AAACAAAAAAD8//z/AAACAAAAAAD9//z/AAACAAAAAAD+//z/AAACAAAAAAD///z/AAACAAAAAAAAAPz/AAACAAAAAAABAPz/AAACAAAAAAACAPz/AAACAAAAAAADAPz/AAACAAAAAAAEAPz/AAACAAAAAAAFAP3/AAAFAAAAAAD5/wEAAAAMAAAAAAD6/wEAAAAUAAAAAAAFAAEAAAAQAAAAAAAGAAEAAAANAAAAAAD6/wAAAAAJAAAAAAD7/wEAAAACAAAAAAD8/wEAAAACAAAAAAD9/wEAAAACAAAAAAD+/wEAAAACAAAAAAD//wEAAAACAAAAAAAAAAEAAAAOAAAAAAABAAEAAAAPAAAAAAACAAEAAAAPAAAAAAADAAEAAAAPAAAAAAAEAAEAAAAPAAAAAAAFAAAAAAARAAAAAAA=")
+tile_set = SubResource("TileSet_w48qg")
+
+[node name="Ground" type="TileMapLayer" parent="World"]
+z_index = -1
+tile_map_data = PackedByteArray("AAAFAAEAAAABAAAAAAAEAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAABAAEAAAABAAAAAAAAAAEAAAABAAAAAAD7/wAAAAABAAAAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAFAP//AAABAAAAAAAEAP//AAABAAAAAAADAP//AAABAAAAAAACAP//AAABAAAAAAABAP//AAABAAAAAAAAAP//AAABAAAAAAD/////AAABAAAAAAD+////AAABAAAAAAD9////AAABAAAAAAD8////AAABAAAAAAD7////AAABAAAAAAD7//7/AAABAAAAAAD8//7/AAABAAAAAAD9//7/AAABAAAAAAD+//7/AAABAAAAAAD///7/AAABAAAAAAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAACAP7/AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAFAP3/AAABAAAAAAAEAP3/AAABAAAAAAADAP3/AAABAAAAAAACAP3/AAABAAAAAAABAP3/AAABAAAAAAAAAP3/AAABAAAAAAD///3/AAABAAAAAAD+//3/AAABAAAAAAD9//3/AAABAAAAAAD8//3/AAABAAAAAAD7//3/AAABAAAAAAD6//3/AAABAAAAAAD6//7/AAABAAAAAAD6////AAABAAAAAAD6/wAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_w48qg")
+
 [node name="Table2" parent="World" instance=ExtResource("2_0xm2m")]
 y_sort_enabled = false
-position = Vector2(4, -26)
+position = Vector2(-8, -8)
 
 [node name="Table3" parent="World" instance=ExtResource("2_0xm2m")]
 y_sort_enabled = false
-position = Vector2(20, -26)
+position = Vector2(8, -8)
 
 [node name="Table" parent="World" instance=ExtResource("2_0xm2m")]
 y_sort_enabled = false
-position = Vector2(-12, -26)
+position = Vector2(-24, -8)
 
 [node name="Trash" parent="World" instance=ExtResource("6_7mycd")]
 y_sort_enabled = false
-position = Vector2(8, 33)
+position = Vector2(24, -8)
 is_broken = false
 
 [node name="Trash2" parent="World" instance=ExtResource("6_7mycd")]
 y_sort_enabled = false
-position = Vector2(14, -70)
+position = Vector2(8, -40)
 is_broken = false
 can_break = false
 
 [node name="Spawner2" parent="World" instance=ExtResource("7_272bh")]
-y_sort_enabled = false
-position = Vector2(-24, 33)
+position = Vector2(-88, -39)
 ingredient = ExtResource("8_5vw27")
-is_broken = false
 
 [node name="Spawner3" parent="World" instance=ExtResource("7_272bh")]
-y_sort_enabled = false
-position = Vector2(-40, 33)
+position = Vector2(-88, -23)
 ingredient = ExtResource("9_4c57u")
-is_broken = false
 
 [node name="Spawner4" parent="World" instance=ExtResource("7_272bh")]
-y_sort_enabled = false
-position = Vector2(-56, 33)
+position = Vector2(-88, -7)
 ingredient = ExtResource("10_efxa6")
-is_broken = false
 
 [node name="Spawner" parent="World" instance=ExtResource("7_272bh")]
-y_sort_enabled = false
-position = Vector2(-8, 33)
+position = Vector2(-88, 9)
 ingredient = ExtResource("4_lquwl")
-is_broken = false
 
 [node name="Spawner5" parent="World" instance=ExtResource("7_272bh")]
-y_sort_enabled = false
-position = Vector2(-2, -70)
+position = Vector2(-8, -40)
 ingredient = ExtResource("8_efxa6")
-is_broken = false
 can_break = false
 
 [node name="Interactable" parent="World" instance=ExtResource("11_efxa6")]
-position = Vector2(24, 33)
+position = Vector2(24, 23.9)
 
 [node name="Interactable2" parent="World" instance=ExtResource("11_efxa6")]
-position = Vector2(40, 33)
+position = Vector2(40, 23.9)
 
 [node name="Interactable3" parent="World" instance=ExtResource("11_efxa6")]
-position = Vector2(56, 33)
+position = Vector2(56, 23.9)
+
+[node name="Interactable4" parent="World" instance=ExtResource("11_efxa6")]
+position = Vector2(72, 23.9)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(0, -58)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(-1, 34.5)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(99.5, -10.75)
+shape = SubResource("RectangleShape2D_ycdy4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(-99.25, -10.75)
+shape = SubResource("RectangleShape2D_ycdy4")
 
 [connection signal="pressed" from="CanvasLayer/Ui/Button" to="GameManager" method="_on_button_pressed"]
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]

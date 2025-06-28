@@ -28,5 +28,5 @@ highlight_texture = SubResource("AtlasTexture_fuq1b")
 unique_name_in_owner = true
 position = Vector2(0, -1)
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="3"]
 texture = SubResource("AtlasTexture_yb6yu")

@@ -39,7 +39,7 @@ unique_name_in_owner = true
 wait_time = 5.0
 autostart = true
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="3"]
 texture = SubResource("AtlasTexture_7d57v")
 
 [node name="ItemDisplay" parent="." index="4" instance=ExtResource("10_n83t4")]
