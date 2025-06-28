@@ -700,10 +700,12 @@ blend_mode = 1
 radius = 5.09902
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_oul6g")
 speed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_g4c7l")
 animation = &"Down"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://b4eeu8gem8aqi"]
+[gd_resource type="Resource" script_class="BaseIngredient" load_steps=6 format=3 uid="uid://b4eeu8gem8aqi"]
 
 [ext_resource type="Script" uid="uid://fkdliok7ftoe" path="res://Items/Ingredient/base_ingredient.gd" id="1_q7cu6"]
 [ext_resource type="Texture2D" uid="uid://6gkpjgw28kd2" path="res://Items/Ingredient/Ingredients/ingredients.png" id="2_430tg"]

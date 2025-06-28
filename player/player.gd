@@ -42,8 +42,8 @@ func _input(event: InputEvent) -> void:
 		var collider = ray_cast.get_collider()
 		
 		if collider and collider is Interactable:
-			collider.interact(self)
-			
+			if collider.can_interact(self):
+				collider.interact(self)
 
 func _physics_process(_delta: float) -> void:
 	var input := Input.get_vector("left", "right", "up", "down")

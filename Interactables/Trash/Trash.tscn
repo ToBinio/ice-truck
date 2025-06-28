@@ -4,22 +4,24 @@
 [ext_resource type="Script" uid="uid://dounxss4hss5f" path="res://Interactables/Trash/trash.gd" id="2_gh8ng"]
 [ext_resource type="Texture2D" uid="uid://bixkwd5mv01v6" path="res://Interactables/Trash/trash.png" id="3_jxmfd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jxmfd"]
-atlas = ExtResource("3_jxmfd")
-region = Rect2(0, 0, 18, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3pha2"]
-atlas = ExtResource("3_jxmfd")
-region = Rect2(18, 0, 18, 0)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ila1"]
 atlas = ExtResource("3_jxmfd")
 region = Rect2(0, 0, 18, 0)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1u34"]
+atlas = ExtResource("3_jxmfd")
+region = Rect2(18, 0, 18, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pha2"]
+atlas = ExtResource("3_jxmfd")
+region = Rect2(36, 0, 18, 0)
+
 [node name="Interactable" instance=ExtResource("1_da31b")]
 script = ExtResource("2_gh8ng")
-texture = SubResource("AtlasTexture_jxmfd")
-highlight_texture = SubResource("AtlasTexture_3pha2")
+texture = SubResource("AtlasTexture_4ila1")
+highlight_texture = SubResource("AtlasTexture_a1u34")
+broken_texture = SubResource("AtlasTexture_3pha2")
+is_broken = null
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("AtlasTexture_4ila1")

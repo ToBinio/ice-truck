@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=3 uid="uid://s8nlqrc0s2mq"]
+[gd_resource type="Resource" script_class="IceIngredient" load_steps=8 format=3 uid="uid://s8nlqrc0s2mq"]
 
 [ext_resource type="Script" uid="uid://b1gl3od3uby36" path="res://Items/Ingredient/ice_ingredient.gd" id="1_fbhnx"]
 [ext_resource type="Texture2D" uid="uid://o53mm2gqr6qk" path="res://Items/Ingredient/Ingredients/ingredients_model.png" id="2_3rvy8"]

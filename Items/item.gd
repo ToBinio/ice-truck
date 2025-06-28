@@ -13,6 +13,9 @@ func _ready() -> void:
 
 	if(resource.base):
 		_display_ingredient(resource.base.model_texture)
+	
+	if(resource.basic):
+		_display_ingredient(resource.basic.model_texture)
 
 func _display_ingredient(texture: Texture2D):
 	var sprite = Sprite2D.new()

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BasicIngredient" load_steps=3 format=3 uid="uid://dwctef6ow7db3"]
+
+[ext_resource type="Script" uid="uid://cjfebeeg3hf0" path="res://Items/Ingredient/basic_ingredient.gd" id="1_5fmlh"]
+[ext_resource type="Texture2D" uid="uid://du4l7wanitdxu" path="res://Items/Ingredient/Ingredients/wrench.png" id="1_axa8e"]
+
+[resource]
+script = ExtResource("1_5fmlh")
+model_texture = ExtResource("1_axa8e")
+name = "Wrench"
+icon_texture = ExtResource("1_axa8e")
+metadata/_custom_type_script = "uid://cjfebeeg3hf0"

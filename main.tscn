@@ -1,54 +1,87 @@
-[gd_scene load_steps=12 format=3 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=11 format=3 uid="uid://cn1syn1671361"]
 
+[ext_resource type="Script" uid="uid://dax1lftn7otqb" path="res://game_manager.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cjpqguam1rh2i" path="res://Interactables/Table/Table.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://b1gl3od3uby36" path="res://Items/Ingredient/ice_ingredient.gd" id="3_4c57u"]
-[ext_resource type="Script" uid="uid://bipvtd5t5b2mo" path="res://Items/item_resource.gd" id="3_h2yge"]
 [ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/cone.tres" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dtjflmog6ee8h" path="res://Interactables/Trash/Trash.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cpyehnysyejpv" path="res://Interactables/Spawner/Spawner.tscn" id="7_272bh"]
 [ext_resource type="Resource" uid="uid://s8nlqrc0s2mq" path="res://Items/Ingredient/Ingredients/ice_strawberry.tres" id="8_5vw27"]
+[ext_resource type="Resource" uid="uid://dwctef6ow7db3" path="res://Items/Ingredient/Ingredients/wrench.tres" id="8_efxa6"]
 [ext_resource type="Resource" uid="uid://cpnl4lkcotet3" path="res://Items/Ingredient/Ingredients/ice_chocolate.tres" id="9_4c57u"]
 [ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="10_efxa6"]
 
-[sub_resource type="Resource" id="Resource_1bvp3"]
-script = ExtResource("3_h2yge")
-ice = Array[ExtResource("3_4c57u")]([])
-metadata/_custom_type_script = "uid://bipvtd5t5b2mo"
-
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+
+[node name="GameManager" type="Node" parent="." groups=["GameManager"]]
+script = ExtResource("1_4c57u")
+
+[node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 5.0
+autostart = true
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(0, -27)
 
 [node name="Table2" parent="." instance=ExtResource("2_0xm2m")]
+y_sort_enabled = false
 position = Vector2(24, 0)
+is_broken = false
 
 [node name="Table3" parent="." instance=ExtResource("2_0xm2m")]
+y_sort_enabled = false
 position = Vector2(40, 0)
+is_broken = false
 
 [node name="Table" parent="." instance=ExtResource("2_0xm2m")]
+y_sort_enabled = false
 position = Vector2(8, 0)
-item = SubResource("Resource_1bvp3")
+is_broken = false
 
 [node name="Trash" parent="." instance=ExtResource("6_7mycd")]
+y_sort_enabled = false
 position = Vector2(56, 0)
+is_broken = false
+
+[node name="Trash2" parent="." instance=ExtResource("6_7mycd")]
+y_sort_enabled = false
+position = Vector2(14, -70)
+is_broken = false
+can_break = false
 
 [node name="Spawner2" parent="." instance=ExtResource("7_272bh")]
+y_sort_enabled = false
 position = Vector2(-24, 0)
 ingredient = ExtResource("8_5vw27")
+is_broken = false
 
 [node name="Spawner3" parent="." instance=ExtResource("7_272bh")]
+y_sort_enabled = false
 position = Vector2(-40, 0)
 ingredient = ExtResource("9_4c57u")
+is_broken = false
 
 [node name="Spawner4" parent="." instance=ExtResource("7_272bh")]
+y_sort_enabled = false
 position = Vector2(-56, 0)
 ingredient = ExtResource("10_efxa6")
+is_broken = false
 
 [node name="Spawner" parent="." instance=ExtResource("7_272bh")]
+y_sort_enabled = false
 position = Vector2(-8, 0)
 ingredient = ExtResource("4_lquwl")
+is_broken = false
+
+[node name="Spawner5" parent="." instance=ExtResource("7_272bh")]
+y_sort_enabled = false
+position = Vector2(-2, -70)
+ingredient = ExtResource("8_efxa6")
+is_broken = false
+can_break = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]

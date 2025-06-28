@@ -13,6 +13,9 @@ func _ready() -> void:
 	item_holdable.item = item
 
 func interact(player: Player):
+	if super(player):
+		return
+	
 	if not item and player.item:
 		item = player.item
 		player.item = null
@@ -27,7 +30,10 @@ func interact(player: Player):
 		item = combination
 		player.item = null
 
-func can_interact(player: Player) -> bool:
+func can_interact(player: Player):
+	if super(player) != null:
+		return super(player)
+		
 	if not item and not player.item:
 		return false
 	
