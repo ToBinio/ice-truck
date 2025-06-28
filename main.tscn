@@ -19,34 +19,35 @@ metadata/_custom_type_script = "uid://bipvtd5t5b2mo"
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(0, -27)
 
 [node name="Table2" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(0, -34)
+position = Vector2(24, 0)
 
 [node name="Table3" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(16, -34)
+position = Vector2(40, 0)
 
 [node name="Table" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(-16, -34)
+position = Vector2(8, 0)
 item = SubResource("Resource_1bvp3")
 
 [node name="Trash" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(32, -34)
+position = Vector2(56, 0)
 
 [node name="Spawner2" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(-48, -34)
+position = Vector2(-24, 0)
 ingredient = ExtResource("8_5vw27")
 
 [node name="Spawner3" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(-64, -34)
+position = Vector2(-40, 0)
 ingredient = ExtResource("9_4c57u")
 
 [node name="Spawner4" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(-80, -34)
+position = Vector2(-56, 0)
 ingredient = ExtResource("10_efxa6")
 
 [node name="Spawner" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(-32, -34)
+position = Vector2(-8, 0)
 ingredient = ExtResource("4_lquwl")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -24,7 +24,7 @@ func _ready() -> void:
 	item_holdable.item = item
 
 func _process(_delta: float) -> void:
-	animation_tree.set("parameters/blend_position", _target_direction)
+	animation_tree.set("parameters/blend_position", velocity)
 	
 	var ray_length = ray_cast.target_position.length()
 	ray_cast.target_position = _facing_direction * ray_length
