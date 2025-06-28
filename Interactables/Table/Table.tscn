@@ -1,17 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjpqguam1rh2i"]
+[gd_scene load_steps=7 format=3 uid="uid://cjpqguam1rh2i"]
 
 [ext_resource type="Script" uid="uid://bqpiq8ajqdrhi" path="res://Interactables/Table/table.gd" id="1_0lgxk"]
 [ext_resource type="PackedScene" uid="uid://ck4hakxpc68dk" path="res://Interactables/Interactable.tscn" id="1_4461c"]
 [ext_resource type="PackedScene" uid="uid://bgem4m2tr8uk0" path="res://Items/Holdable/ItemHoldable.tscn" id="3_mx5ah"]
 [ext_resource type="Texture2D" uid="uid://ca5t015nrq6l0" path="res://Interactables/Table/table.png" id="4_yb6yu"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb6yu"]
+atlas = ExtResource("4_yb6yu")
+region = Rect2(0, 0, 18, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuq1b"]
+atlas = ExtResource("4_yb6yu")
+region = Rect2(18, 0, 18, 0)
+
 [node name="Interactable" instance=ExtResource("1_4461c")]
 script = ExtResource("1_0lgxk")
 item = null
+texture = SubResource("AtlasTexture_yb6yu")
+highlight_texture = SubResource("AtlasTexture_fuq1b")
 
 [node name="ItemHoldable" parent="." index="0" instance=ExtResource("3_mx5ah")]
 unique_name_in_owner = true
 position = Vector2(0, -1)
 
 [node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("4_yb6yu")
+texture = SubResource("AtlasTexture_yb6yu")

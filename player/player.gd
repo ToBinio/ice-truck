@@ -31,6 +31,11 @@ func _process(_delta: float) -> void:
 	
 	var item_distance = item_holdable.position.length()
 	item_holdable.position = _facing_direction * item_distance
+	
+	var collider = ray_cast.get_collider()
+		
+	if collider and collider is Interactable:
+		collider.try_interact(self)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):

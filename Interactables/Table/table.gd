@@ -26,3 +26,12 @@ func interact(player: Player):
 		var combination = ItemResource.combine(item, player.item)
 		item = combination
 		player.item = null
+
+func can_interact(player: Player) -> bool:
+	if not item and not player.item:
+		return false
+	
+	if item and player.item:
+		return ItemResource.can_combine(item, player.item);
+	
+	return true

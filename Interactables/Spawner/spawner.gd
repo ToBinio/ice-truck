@@ -12,3 +12,6 @@ func interact(player: Player):
 		
 	var item = ItemResource.from_ingredient(ingredient)
 	player.item = item
+
+func can_interact(player: Player) -> bool:
+	return player.item == null;

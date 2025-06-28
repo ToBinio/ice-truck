@@ -1,11 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtjflmog6ee8h"]
+[gd_scene load_steps=7 format=3 uid="uid://dtjflmog6ee8h"]
 
 [ext_resource type="PackedScene" uid="uid://ck4hakxpc68dk" path="res://Interactables/Interactable.tscn" id="1_da31b"]
 [ext_resource type="Script" uid="uid://dounxss4hss5f" path="res://Interactables/Trash/trash.gd" id="2_gh8ng"]
 [ext_resource type="Texture2D" uid="uid://bixkwd5mv01v6" path="res://Interactables/Trash/trash.png" id="3_jxmfd"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxmfd"]
+atlas = ExtResource("3_jxmfd")
+region = Rect2(0, 0, 18, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pha2"]
+atlas = ExtResource("3_jxmfd")
+region = Rect2(18, 0, 18, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ila1"]
+atlas = ExtResource("3_jxmfd")
+region = Rect2(0, 0, 18, 0)
+
 [node name="Interactable" instance=ExtResource("1_da31b")]
 script = ExtResource("2_gh8ng")
+texture = SubResource("AtlasTexture_jxmfd")
+highlight_texture = SubResource("AtlasTexture_3pha2")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_jxmfd")
+texture = SubResource("AtlasTexture_4ila1")

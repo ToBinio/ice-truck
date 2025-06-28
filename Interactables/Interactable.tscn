@@ -12,6 +12,7 @@ size = Vector2(16, 16)
 script = ExtResource("1_nuwr0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = SubResource("PlaceholderTexture2D_nuwr0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
