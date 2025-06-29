@@ -30,7 +30,6 @@ func _process(delta: float) -> void:
 		return
 
 	difficultly_scale = 1 / (log((survived_time / 25) + 2) / log(10))
-	print(difficultly_scale)
 
 	if happiness <= 0:
 		animation_player.play("Death")
