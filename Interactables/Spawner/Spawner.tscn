@@ -23,10 +23,10 @@ texture = SubResource("AtlasTexture_4v330")
 broken_texture = SubResource("AtlasTexture_emw8u")
 highlight_texture = SubResource("AtlasTexture_lw37u")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="2"]
 y_sort_enabled = false
 texture = SubResource("AtlasTexture_4v330")
 
-[node name="Ingredient" type="Sprite2D" parent="." index="1"]
+[node name="Ingredient" type="Sprite2D" parent="." index="3"]
 unique_name_in_owner = true
 position = Vector2(0, -1)

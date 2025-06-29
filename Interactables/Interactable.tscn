@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck4hakxpc68dk"]
+[gd_scene load_steps=8 format=3 uid="uid://ck4hakxpc68dk"]
 
 [ext_resource type="Script" uid="uid://clpjnytcxurqt" path="res://Interactables/interactable.gd" id="1_nuwr0"]
 [ext_resource type="Resource" uid="uid://dwctef6ow7db3" path="res://Items/Ingredient/Ingredients/wrench.tres" id="2_78h5l"]
+[ext_resource type="AudioStream" uid="uid://bxxxjw0v0csb0" path="res://Audio/interact.wav" id="3_cuqgm"]
 [ext_resource type="Texture2D" uid="uid://du4l7wanitdxu" path="res://Items/Ingredient/Ingredients/wrench.png" id="3_o0cj4"]
+[ext_resource type="AudioStream" uid="uid://1tm5d3fpf4bi" path="res://Audio/repair.wav" id="3_vhgp6"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nuwr0"]
 size = Vector2(16, 16)
@@ -14,6 +16,15 @@ size = Vector2(16, 16)
 script = ExtResource("1_nuwr0")
 wrench_ingredient = ExtResource("2_78h5l")
 can_break = true
+
+[node name="RepairStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vhgp6")
+volume_db = -10.0
+
+[node name="InteractStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_cuqgm")
+volume_db = -20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true

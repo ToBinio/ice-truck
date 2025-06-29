@@ -10,8 +10,10 @@ class_name Service
 @onready var task_node: Node2D = %Task
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var customer_stream_player: AudioStreamPlayer = %CustomerStreamPlayer
 
 @onready var timer: Timer = %Timer
+@onready var money_audio_stream: AudioStreamPlayer = %MoneyAudioStream
 
 var _show_task: bool = false
 var task: ItemResource
@@ -33,18 +35,16 @@ func _process(delta: float) -> void:
 func interact(player: Player):
 	if super(player):
 		return
-		
-	if(task.is_same(player.item)):
+
+	if (task.is_same(player.item)):
 		task = null
 		_display_task()
 		GameManager.instance(self).happiness += 20
 		animation_player.play("Down")
+		money_audio_stream.play()
 		
 		print("Served correcly")
-	else:
-		GameManager.instance(self).happiness -= 25
-		print("nope")
-		
+			
 	player.item = null
 
 func try_interact(player: Player):
@@ -55,7 +55,7 @@ func can_interact(player: Player):
 	if super(player) != null:
 		return super(player)
 	
-	return player.item and player.item.basic == null and task;
+	return player.item and player.item.basic == null and task and task.is_same(player.item);
 
 var i = 0;
 func _display_task():
@@ -113,5 +113,6 @@ func _on_timer_timeout() -> void:
 		await get_tree().create_timer(1.5).timeout
 		
 		_display_task()
+		customer_stream_player.play()
 		
 	timer.start(randf_range(5,10))

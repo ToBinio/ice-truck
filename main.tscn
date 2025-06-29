@@ -1,8 +1,10 @@
-[gd_scene load_steps=23 format=4 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=25 format=4 uid="uid://cn1syn1671361"]
 
 [ext_resource type="Script" uid="uid://dax1lftn7otqb" path="res://game_manager.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cjpqguam1rh2i" path="res://Interactables/Table/Table.tscn" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://b0cwq2gimc0gf" path="res://Audio/music.mp3" id="2_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://bm5dsceyv5yu7" path="res://Audio/break.wav" id="3_w48qg"]
 [ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/cone.tres" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dtjflmog6ee8h" path="res://Interactables/Trash/Trash.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cpyehnysyejpv" path="res://Interactables/Spawner/Spawner.tscn" id="7_272bh"]
@@ -302,6 +304,17 @@ happniness_gradient = SubResource("Gradient_efxa6")
 [node name="BreakTimer" type="Timer" parent="GameManager"]
 unique_name_in_owner = true
 wait_time = 5.0
+
+[node name="Music" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("2_ycdy4")
+volume_db = -20.0
+autoplay = true
+
+[node name="BreakSoundPlayer" type="AudioStreamPlayer" parent="GameManager"]
+unique_name_in_owner = true
+stream = ExtResource("3_w48qg")
+volume_db = -20.0
+pitch_scale = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)

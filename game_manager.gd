@@ -9,6 +9,9 @@ var survived_time: float = 0
 @onready var timer: Label = %Timer
 
 @onready var break_timer: Timer = %BreakTimer
+@onready var break_sound_player: AudioStreamPlayer = %BreakSoundPlayer
+
+@onready var music: AudioStreamPlayer = $Music
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 var has_lost = false
@@ -27,6 +30,7 @@ func _process(delta: float) -> void:
 	if happiness <= 0:
 		animation_player.play("Death")
 		has_lost = true
+		music.stop()
 	
 	survived_time += delta
 	
@@ -59,6 +63,7 @@ func _on_timer_timeout() -> void:
 	if not break_able.is_empty():
 		var interactable = break_able.pick_random() as Interactable
 		interactable.is_broken = true
+		break_sound_player.play()
 		
 	break_timer.start(randf_range(5,20))
 
