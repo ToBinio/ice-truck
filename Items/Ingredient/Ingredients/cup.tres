@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BaseIngredient" load_steps=6 format=3 uid="uid://bdllhcne0w1oi"]
+
+[ext_resource type="Texture2D" uid="uid://6gkpjgw28kd2" path="res://Items/Ingredient/Ingredients/ingredients.png" id="1_ud6ya"]
+[ext_resource type="Texture2D" uid="uid://o53mm2gqr6qk" path="res://Items/Ingredient/Ingredients/ingredients_model.png" id="2_7gnj2"]
+[ext_resource type="Script" uid="uid://fkdliok7ftoe" path="res://Items/Ingredient/base_ingredient.gd" id="3_mv5fn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_430tg"]
+atlas = ExtResource("1_ud6ya")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iae8s"]
+atlas = ExtResource("2_7gnj2")
+region = Rect2(100, 0, 10, 10)
+
+[resource]
+script = ExtResource("3_mv5fn")
+model_texture = SubResource("AtlasTexture_iae8s")
+name = "Cup"
+icon_texture = SubResource("AtlasTexture_430tg")
+metadata/_custom_type_script = "uid://btad234b4ron5"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=28 format=4 uid="uid://cn1syn1671361"]
 
 [ext_resource type="Script" uid="uid://dax1lftn7otqb" path="res://game_manager.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
@@ -15,6 +15,8 @@
 [ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="10_efxa6"]
 [ext_resource type="PackedScene" uid="uid://kc1yw2x7uvuk" path="res://Interactables/Service/Service.tscn" id="11_efxa6"]
 [ext_resource type="Texture2D" uid="uid://mglnsltghlgx" path="res://spritesheet.png" id="12_dg77c"]
+[ext_resource type="Resource" uid="uid://dw5od6u4y4vts" path="res://Items/Ingredient/Ingredients/ice_pistachio.tres" id="13_2cqfq"]
+[ext_resource type="Resource" uid="uid://bdllhcne0w1oi" path="res://Items/Ingredient/Ingredients/cup.tres" id="15_yaehf"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
 resource_name = "Death"
@@ -427,12 +429,8 @@ position = Vector2(8, -8)
 [node name="Table" parent="World/Interactables" instance=ExtResource("2_0xm2m")]
 position = Vector2(-24, -8)
 
-[node name="Trash" parent="World/Interactables" instance=ExtResource("6_7mycd")]
-position = Vector2(24, -8)
-is_broken = false
-
 [node name="Trash2" parent="World/Interactables" instance=ExtResource("6_7mycd")]
-position = Vector2(8, -40)
+position = Vector2(24, -8)
 is_broken = false
 can_break = false
 
@@ -448,12 +446,20 @@ ingredient = ExtResource("9_4c57u")
 position = Vector2(-88, -7)
 ingredient = ExtResource("10_efxa6")
 
+[node name="Spawner6" parent="World/Interactables" instance=ExtResource("7_272bh")]
+position = Vector2(-88, 8)
+ingredient = ExtResource("13_2cqfq")
+
 [node name="Spawner" parent="World/Interactables" instance=ExtResource("7_272bh")]
-position = Vector2(-88, 9)
+position = Vector2(-24, -40)
 ingredient = ExtResource("4_lquwl")
 
-[node name="Spawner5" parent="World/Interactables" instance=ExtResource("7_272bh")]
+[node name="Spawner7" parent="World/Interactables" instance=ExtResource("7_272bh")]
 position = Vector2(-8, -40)
+ingredient = ExtResource("15_yaehf")
+
+[node name="Spawner5" parent="World/Interactables" instance=ExtResource("7_272bh")]
+position = Vector2(8, -40)
 ingredient = ExtResource("8_efxa6")
 can_break = false
 

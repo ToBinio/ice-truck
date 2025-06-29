@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://kc1yw2x7uvuk"]
+[gd_scene load_steps=34 format=3 uid="uid://kc1yw2x7uvuk"]
 
 [ext_resource type="PackedScene" uid="uid://ck4hakxpc68dk" path="res://Interactables/Interactable.tscn" id="1_njncs"]
 [ext_resource type="Script" uid="uid://bcnxfvv3xn3ky" path="res://Interactables/Service/service.gd" id="2_1o6vg"]
@@ -8,7 +8,9 @@
 [ext_resource type="Resource" uid="uid://s8nlqrc0s2mq" path="res://Items/Ingredient/Ingredients/ice_strawberry.tres" id="5_2hnnq"]
 [ext_resource type="Resource" uid="uid://cpsmhquju0ld2" path="res://Items/Ingredient/Ingredients/ice_vanilla.tres" id="6_n83t4"]
 [ext_resource type="Script" uid="uid://fkdliok7ftoe" path="res://Items/Ingredient/base_ingredient.gd" id="7_4rbit"]
+[ext_resource type="Resource" uid="uid://dw5od6u4y4vts" path="res://Items/Ingredient/Ingredients/ice_pistachio.tres" id="7_710vm"]
 [ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/cone.tres" id="8_2hnnq"]
+[ext_resource type="Resource" uid="uid://bdllhcne0w1oi" path="res://Items/Ingredient/Ingredients/cup.tres" id="10_7bg7k"]
 [ext_resource type="AudioStream" uid="uid://lknvkf2uuc3t" path="res://Audio/coins.wav" id="10_gkybo"]
 [ext_resource type="PackedScene" uid="uid://bgem4m2tr8uk0" path="res://Items/Holdable/ItemHoldable.tscn" id="10_n83t4"]
 [ext_resource type="AudioStream" uid="uid://b28yh5j0aq15c" path="res://Audio/customer.wav" id="11_0fsxj"]
@@ -198,8 +200,8 @@ _data = {
 
 [node name="Interactable" groups=["Service"] instance=ExtResource("1_njncs")]
 script = ExtResource("2_1o6vg")
-possible_ice = Array[ExtResource("3_uxhjx")]([ExtResource("4_myjxr"), ExtResource("5_2hnnq"), ExtResource("6_n83t4")])
-possible_base = Array[ExtResource("7_4rbit")]([ExtResource("8_2hnnq")])
+possible_ice = Array[ExtResource("3_uxhjx")]([ExtResource("4_myjxr"), ExtResource("5_2hnnq"), ExtResource("6_n83t4"), ExtResource("7_710vm")])
+possible_base = Array[ExtResource("7_4rbit")]([ExtResource("8_2hnnq"), ExtResource("10_7bg7k")])
 texture = SubResource("AtlasTexture_7d57v")
 broken_texture = SubResource("AtlasTexture_uxhjx")
 highlight_texture = SubResource("AtlasTexture_1ltcq")

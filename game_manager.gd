@@ -48,6 +48,8 @@ func _process(delta: float) -> void:
 		if service.task:
 			happiness -= delta
 	
+	happiness = clamp(happiness, 0, 120)
+	
 	happiness_bar.value = happiness
 	happiness_bar.get("theme_override_styles/background").set("bg_color", happniness_gradient.sample(happiness / 100.))
 
