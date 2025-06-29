@@ -19,7 +19,7 @@ var _show_task: bool = false
 var task: ItemResource
 
 func _ready() -> void:
-	timer.start(randf_range(5,10))
+	timer.start(randf_range(2,15))
 	item_container.hide()
 
 func _process(delta: float) -> void:
@@ -114,5 +114,6 @@ func _on_timer_timeout() -> void:
 		
 		_display_task()
 		customer_stream_player.play()
-		
-	timer.start(randf_range(5,10))
+	
+	var game_mamanger = GameManager.instance(self)
+	timer.start(randf_range(5 * game_mamanger.difficultly_scale,10 * game_mamanger.difficultly_scale))

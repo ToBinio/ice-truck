@@ -16,6 +16,8 @@ var survived_time: float = 0
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 var has_lost = false
 
+var difficultly_scale = 3;
+
 static func instance(node: Node) -> GameManager:
 	return node.get_tree().get_first_node_in_group("GameManager")
 
@@ -26,6 +28,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if has_lost:
 		return
+
+	difficultly_scale = 1 / (log((survived_time / 25) + 2) / log(10))
+	print(difficultly_scale)
 
 	if happiness <= 0:
 		animation_player.play("Death")
@@ -65,7 +70,7 @@ func _on_timer_timeout() -> void:
 		interactable.is_broken = true
 		break_sound_player.play()
 		
-	break_timer.start(randf_range(5,20))
+	break_timer.start(randf_range(5 * difficultly_scale, 20 * difficultly_scale))
 
 
 func _on_button_pressed() -> void:
