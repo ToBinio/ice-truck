@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cn1syn1671361"]
+[gd_scene load_steps=30 format=4 uid="uid://cn1syn1671361"]
 
 [ext_resource type="Script" uid="uid://dax1lftn7otqb" path="res://game_manager.gd" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://767e7mgf23rr" path="res://player/player.tscn" id="1_ig7tw"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://mglnsltghlgx" path="res://spritesheet.png" id="12_dg77c"]
 [ext_resource type="Resource" uid="uid://dw5od6u4y4vts" path="res://Items/Ingredient/Ingredients/ice_pistachio.tres" id="13_2cqfq"]
 [ext_resource type="Resource" uid="uid://bdllhcne0w1oi" path="res://Items/Ingredient/Ingredients/cup.tres" id="15_yaehf"]
+[ext_resource type="Resource" uid="uid://cwxk124vgjvav" path="res://Items/Ingredient/Ingredients/sprinkels.tres" id="16_82xsv"]
+[ext_resource type="Resource" uid="uid://cnv4unqt6rkuv" path="res://Items/Ingredient/Ingredients/cookies.tres" id="17_getpj"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
 resource_name = "Death"
@@ -31,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [48, 86]
+"values": [48, 128]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -55,7 +57,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.533333, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1, 50]
+"values": [1, 48]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -327,7 +329,7 @@ offset_bottom = 440.685
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_vivmo")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 text = "Try Again"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
@@ -426,11 +428,20 @@ position = Vector2(-8, -8)
 [node name="Table3" parent="World/Interactables" instance=ExtResource("2_0xm2m")]
 position = Vector2(8, -8)
 
+[node name="Table5" parent="World/Interactables" instance=ExtResource("2_0xm2m")]
+position = Vector2(24, -8)
+
+[node name="Table6" parent="World/Interactables" instance=ExtResource("2_0xm2m")]
+position = Vector2(-8, -40)
+
 [node name="Table" parent="World/Interactables" instance=ExtResource("2_0xm2m")]
 position = Vector2(-24, -8)
 
+[node name="Table4" parent="World/Interactables" instance=ExtResource("2_0xm2m")]
+position = Vector2(-40, -8)
+
 [node name="Trash2" parent="World/Interactables" instance=ExtResource("6_7mycd")]
-position = Vector2(24, -8)
+position = Vector2(88, -8)
 is_broken = false
 can_break = false
 
@@ -451,15 +462,23 @@ position = Vector2(-88, 8)
 ingredient = ExtResource("13_2cqfq")
 
 [node name="Spawner" parent="World/Interactables" instance=ExtResource("7_272bh")]
-position = Vector2(-24, -40)
+position = Vector2(-40, -40)
 ingredient = ExtResource("4_lquwl")
 
 [node name="Spawner7" parent="World/Interactables" instance=ExtResource("7_272bh")]
-position = Vector2(-8, -40)
+position = Vector2(-24, -40)
 ingredient = ExtResource("15_yaehf")
 
-[node name="Spawner5" parent="World/Interactables" instance=ExtResource("7_272bh")]
+[node name="Spawner8" parent="World/Interactables" instance=ExtResource("7_272bh")]
 position = Vector2(8, -40)
+ingredient = ExtResource("16_82xsv")
+
+[node name="Spawner9" parent="World/Interactables" instance=ExtResource("7_272bh")]
+position = Vector2(24, -40)
+ingredient = ExtResource("17_getpj")
+
+[node name="Spawner5" parent="World/Interactables" instance=ExtResource("7_272bh")]
+position = Vector2(88, -24)
 ingredient = ExtResource("8_efxa6")
 can_break = false
 

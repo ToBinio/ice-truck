@@ -2,6 +2,7 @@ extends Interactable
 class_name Service
 
 @export var possible_ice: Array[IceIngredient]
+@export var possible_addons: Array[AddonIngredient]
 @export var possible_base: Array[BaseIngredient]
 
 @onready var item_container: Node2D = %ItemContainer
@@ -39,7 +40,7 @@ func interact(player: Player):
 	if (task.is_same(player.item)):
 		task = null
 		_display_task()
-		GameManager.instance(self).happiness += 20
+		GameManager.instance(self).happiness += 35
 		animation_player.play("Down")
 		money_audio_stream.play()
 		
@@ -75,14 +76,20 @@ func _display_task():
 		sprite.texture = ingredient.icon_texture
 		
 		@warning_ignore("integer_division")
-		sprite.position.y = i / 2 * 10
-		sprite.position.x = -5 if i % 2 == 0 else 5 
+		sprite.position.y = i / 3 * 10
+		
+		match i % 3:
+			0: sprite.position.x = 0
+			1: sprite.position.x = 10
+			2: sprite.position.x = -10
 		
 		task_node.add_child(sprite)
 		
 		i += 1
 	
 	add_icon.call(task.base);
+	if(task.addon):
+		add_icon.call(task.addon);
 	
 	for ice in task.ice:
 		add_icon.call(ice);
@@ -99,10 +106,15 @@ func _on_timer_timeout() -> void:
 		timer.start(randf_range(5,10))
 		return
 	
+	var game_mamanger = GameManager.instance(self)
+	
 	if not task:
 		var item = ItemResource.new()
 		
 		item.base = possible_base.pick_random()
+		
+		if randf() > 0.5 * game_mamanger.difficultly_scale:
+			item.addon = possible_addons.pick_random()
 		
 		for _i in randi_range(1,3):
 			item.ice.append(possible_ice.pick_random())
@@ -115,5 +127,4 @@ func _on_timer_timeout() -> void:
 		_display_task()
 		customer_stream_player.play()
 	
-	var game_mamanger = GameManager.instance(self)
-	timer.start(randf_range(5 * game_mamanger.difficultly_scale,10 * game_mamanger.difficultly_scale))
+	timer.start(randf_range(8 * game_mamanger.difficultly_scale,15 * game_mamanger.difficultly_scale))

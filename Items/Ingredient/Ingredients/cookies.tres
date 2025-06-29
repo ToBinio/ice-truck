@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AddonIngredient" load_steps=8 format=3 uid="uid://cnv4unqt6rkuv"]
+
+[ext_resource type="Texture2D" uid="uid://6gkpjgw28kd2" path="res://Items/Ingredient/Ingredients/ingredients.png" id="1_8pbev"]
+[ext_resource type="Script" uid="uid://cxxdurv1fayml" path="res://Items/Ingredient/addon_ingredient.gd" id="1_ujkd7"]
+[ext_resource type="Texture2D" uid="uid://o53mm2gqr6qk" path="res://Items/Ingredient/Ingredients/ingredients_model.png" id="2_woqvs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woqvs"]
+atlas = ExtResource("1_8pbev")
+region = Rect2(56, 0, 8, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgdfc"]
+atlas = ExtResource("2_woqvs")
+region = Rect2(190, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46uy0"]
+atlas = ExtResource("2_woqvs")
+region = Rect2(180, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnboi"]
+atlas = ExtResource("2_woqvs")
+region = Rect2(170, 0, 10, 0)
+
+[resource]
+script = ExtResource("1_ujkd7")
+level1_texture = SubResource("AtlasTexture_qgdfc")
+level2_texture = SubResource("AtlasTexture_46uy0")
+level3_texture = SubResource("AtlasTexture_pnboi")
+name = "Cookies"
+icon_texture = SubResource("AtlasTexture_woqvs")
+metadata/_custom_type_script = "uid://cxxdurv1fayml"

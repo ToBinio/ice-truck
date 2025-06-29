@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AddonIngredient" load_steps=8 format=3 uid="uid://cwxk124vgjvav"]
+
+[ext_resource type="Texture2D" uid="uid://6gkpjgw28kd2" path="res://Items/Ingredient/Ingredients/ingredients.png" id="1_3vgyq"]
+[ext_resource type="Script" uid="uid://cxxdurv1fayml" path="res://Items/Ingredient/addon_ingredient.gd" id="2_hi280"]
+[ext_resource type="Texture2D" uid="uid://o53mm2gqr6qk" path="res://Items/Ingredient/Ingredients/ingredients_model.png" id="2_sdcgs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdcgs"]
+atlas = ExtResource("1_3vgyq")
+region = Rect2(48, 0, 8, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi280"]
+atlas = ExtResource("2_sdcgs")
+region = Rect2(160, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ix82"]
+atlas = ExtResource("2_sdcgs")
+region = Rect2(150, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4ih3"]
+atlas = ExtResource("2_sdcgs")
+region = Rect2(140, 0, 10, 0)
+
+[resource]
+script = ExtResource("2_hi280")
+level1_texture = SubResource("AtlasTexture_hi280")
+level2_texture = SubResource("AtlasTexture_4ix82")
+level3_texture = SubResource("AtlasTexture_h4ih3")
+name = "Sprinkels"
+icon_texture = SubResource("AtlasTexture_sdcgs")
+metadata/_custom_type_script = "uid://cxxdurv1fayml"

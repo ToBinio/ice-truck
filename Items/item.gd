@@ -14,6 +14,14 @@ func _ready() -> void:
 	if(resource.base):
 		_display_ingredient(resource.base.model_texture)
 	
+	if(resource.addon):
+		var ice_count = resource.ice.size()
+		match ice_count:
+			0: _display_ingredient(resource.addon.level3_texture)
+			1: _display_ingredient(resource.addon.level1_texture)
+			2: _display_ingredient(resource.addon.level2_texture)
+			3: _display_ingredient(resource.addon.level3_texture)
+	
 	if(resource.basic):
 		_display_ingredient(resource.basic.model_texture)
 
