@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://kc1yw2x7uvuk"]
+[gd_scene load_steps=30 format=3 uid="uid://kc1yw2x7uvuk"]
 
 [ext_resource type="PackedScene" uid="uid://ck4hakxpc68dk" path="res://Interactables/Interactable.tscn" id="1_njncs"]
 [ext_resource type="Script" uid="uid://bcnxfvv3xn3ky" path="res://Interactables/Service/service.gd" id="2_1o6vg"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://fkdliok7ftoe" path="res://Items/Ingredient/base_ingredient.gd" id="7_4rbit"]
 [ext_resource type="Resource" uid="uid://b4eeu8gem8aqi" path="res://Items/Ingredient/Ingredients/cone.tres" id="8_2hnnq"]
 [ext_resource type="PackedScene" uid="uid://bgem4m2tr8uk0" path="res://Items/Holdable/ItemHoldable.tscn" id="10_n83t4"]
+[ext_resource type="Texture2D" uid="uid://belvtlihoavvp" path="res://player/npc1.png" id="11_4rbit"]
+[ext_resource type="Texture2D" uid="uid://7t1ki5tkodt3" path="res://player/npc-buble.png" id="11_jlyrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7d57v"]
 atlas = ExtResource("3_7d57v")
@@ -23,8 +25,174 @@ region = Rect2(36, 0, 18, 0)
 atlas = ExtResource("3_7d57v")
 region = Rect2(18, 0, 18, 0)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ur4n8"]
-size = Vector2(10, 10)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlyrl"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkybo"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fsxj"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(112, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f47jq"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(160, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_710vm"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bg7k"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cdwx"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l7cv"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbbdl"]
+atlas = ExtResource("11_4rbit")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mi70y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlyrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkybo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fsxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f47jq")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_710vm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bg7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cdwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l7cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbbdl")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_4rbit"]
+resource_name = "To"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 67), Vector2(0, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Up", &"Idle"]
+}
+
+[sub_resource type="Animation" id="Animation_jlyrl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 67)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+
+[sub_resource type="Animation" id="Animation_gkybo"]
+resource_name = "Down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Down", &"Down"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 12), Vector2(0, 67)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gkybo"]
+_data = {
+&"Down": SubResource("Animation_gkybo"),
+&"RESET": SubResource("Animation_jlyrl"),
+&"To": SubResource("Animation_4rbit")
+}
 
 [node name="Interactable" groups=["Service"] instance=ExtResource("1_njncs")]
 script = ExtResource("2_1o6vg")
@@ -37,20 +205,40 @@ highlight_texture = SubResource("AtlasTexture_1ltcq")
 [node name="Timer" type="Timer" parent="." index="0"]
 unique_name_in_owner = true
 wait_time = 5.0
-autostart = true
 
-[node name="Sprite2D" parent="." index="3"]
+[node name="Sprite2D" parent="." index="1"]
 texture = SubResource("AtlasTexture_7d57v")
 
-[node name="ItemDisplay" parent="." index="4" instance=ExtResource("10_n83t4")]
-unique_name_in_owner = true
-position = Vector2(0, 9)
+[node name="NPC" type="Node2D" parent="." index="4"]
+z_index = 4
 
-[node name="Task" type="Node2D" parent="." index="5"]
-unique_name_in_owner = true
-position = Vector2(0, 16)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC" index="0"]
+position = Vector2(0, 67)
+sprite_frames = SubResource("SpriteFrames_mi70y")
+animation = &"Idle"
+autoplay = "Up"
 
-[node name="Sprite2D" type="Sprite2D" parent="Task" index="0"]
-texture = SubResource("PlaceholderTexture2D_ur4n8")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC" index="1"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_gkybo")
+}
+
+[node name="ItemContainer" type="Node2D" parent="." index="5"]
+unique_name_in_owner = true
+z_index = 5
+position = Vector2(0, 14)
+
+[node name="ItemDisplay" parent="ItemContainer" index="0" instance=ExtResource("10_n83t4")]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemContainer" index="1"]
+texture = ExtResource("11_jlyrl")
+
+[node name="Task" type="Node2D" parent="." index="6"]
+unique_name_in_owner = true
+z_index = 5
+position = Vector2(0, 26)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

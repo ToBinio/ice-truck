@@ -17,7 +17,6 @@ atlas = ExtResource("3_7aaii")
 region = Rect2(18, 0, 18, 0)
 
 [node name="Interactable" instance=ExtResource("1_7guo8")]
-y_sort_enabled = false
 script = ExtResource("2_d22e4")
 ingredient = null
 texture = SubResource("AtlasTexture_4v330")

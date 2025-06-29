@@ -8,6 +8,8 @@ var happiness: float = 100.0
 var survived_time: float = 0
 @onready var timer: Label = %Timer
 
+@onready var break_timer: Timer = %BreakTimer
+
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 var has_lost = false
 
@@ -16,6 +18,7 @@ static func instance(node: Node) -> GameManager:
 
 func _ready() -> void:
 	happiness_bar.value = happiness
+	break_timer.start(randf_range(5,20))
 
 func _process(delta: float) -> void:
 	if has_lost:
@@ -56,6 +59,8 @@ func _on_timer_timeout() -> void:
 	if not break_able.is_empty():
 		var interactable = break_able.pick_random() as Interactable
 		interactable.is_broken = true
+		
+	break_timer.start(randf_range(5,20))
 
 
 func _on_button_pressed() -> void:

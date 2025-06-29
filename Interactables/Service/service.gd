@@ -4,11 +4,21 @@ class_name Service
 @export var possible_ice: Array[IceIngredient]
 @export var possible_base: Array[BaseIngredient]
 
+@onready var item_container: Node2D = %ItemContainer
 @onready var item_display: ItemHoldable = %ItemDisplay
+
 @onready var task_node: Node2D = %Task
+
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+
+@onready var timer: Timer = %Timer
 
 var _show_task: bool = false
 var task: ItemResource
+
+func _ready() -> void:
+	timer.start(randf_range(5,10))
+	item_container.hide()
 
 func _process(delta: float) -> void:
 	super(delta)
@@ -28,6 +38,8 @@ func interact(player: Player):
 		task = null
 		_display_task()
 		GameManager.instance(self).happiness += 20
+		animation_player.play("Down")
+		
 		print("Served correcly")
 	else:
 		GameManager.instance(self).happiness -= 25
@@ -47,6 +59,7 @@ func can_interact(player: Player):
 
 var i = 0;
 func _display_task():
+	item_container.visible = task != null
 	item_display.item = task
 	
 	for child in task_node.get_children():
@@ -75,6 +88,17 @@ func _display_task():
 		add_icon.call(ice);
 
 func _on_timer_timeout() -> void:
+	var services = get_tree().get_nodes_in_group("Service") as Array[Service]
+	var open_tasks = 0 
+	
+	for service in services:
+		if service.task:
+			open_tasks += 1
+	
+	if randf() <= open_tasks * 0.2:
+		timer.start(randf_range(5,10))
+		return
+	
 	if not task:
 		var item = ItemResource.new()
 		
@@ -83,5 +107,11 @@ func _on_timer_timeout() -> void:
 		for _i in randi_range(1,3):
 			item.ice.append(possible_ice.pick_random())
 		
+		animation_player.play("To")
 		task = item
+		
+		await get_tree().create_timer(1.5).timeout
+		
 		_display_task()
+		
+	timer.start(randf_range(5,10))
